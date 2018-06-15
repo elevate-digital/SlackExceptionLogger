@@ -12,10 +12,7 @@ class SlackExceptionLogger{
 			$file = $exception->getFile();
 			$line = $exception->getLine();
 			if ($code != 404 and env("LOG_EXCEPTIONS", true) == true){
-				$message = "\n*An exception occurred on* $url (" . $_SERVER['REQUEST_METHOD'] . ")\n\n
-				```$exceptionMessage```\n
-				*File:* `$file`\n*
-				Line:* `$line`\n";
+				$message = "\n*An exception occurred on* $url (" . $_SERVER['REQUEST_METHOD'] . ")\n\n```$exceptionMessage```\n*File:* `$file`\n*Line:* `$line`\n";
 
 				(new SlackMessenger)->send($slackUrl, $message);
 			}
