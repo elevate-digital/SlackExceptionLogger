@@ -1,0 +1,14 @@
+{
+	"name": "elevate-digital/slack-exception-logger",
+	"description": "Laravel packge to log exceptions to slack.",
+	"type": "library",
+	"require": {
+		"elevate-digital/slack-messenger": "dev-master"
+	},
+	"autoload": {
+		"psr-0": {
+			"SlackExceptionLogger": "src/"
+		}
+	},
+	"minimum-stability": "dev"
+}
