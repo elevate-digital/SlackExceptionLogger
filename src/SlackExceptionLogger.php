@@ -4,7 +4,7 @@ namespace SlackExceptionLogger;
 use SlackMessenger\SlackMessenger;
 
 class SlackExceptionLogger{
-	public function log($url, $exception){
+	public function log($slackUrl, $exception){
 		$code = $exception->getCode();
 		if (isset($_SERVER['REQUEST_URI'])){
 			$url = env("APP_URL") . $_SERVER['REQUEST_URI'];
@@ -17,7 +17,7 @@ class SlackExceptionLogger{
 				*File:* `$file`\n*
 				Line:* `$line`\n";
 
-				(new SlackMessenger)->send($url, $message);
+				(new SlackMessenger)->send($slackUrl, $message);
 			}
 		}
 	}
