@@ -1,6 +1,6 @@
 # Slack Exception Logger
 
-Add this to your Exception Handler in `app\Exceptions\Handler.php`
+Add this to your report method in `app\Exceptions\Handler.php`
 
 ```php
 public function report(Exception $exception)
